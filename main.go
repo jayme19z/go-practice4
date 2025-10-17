@@ -30,7 +30,7 @@ func main() {
 	db.SetConnMaxLifetime(5 * time.Minute)
 
 	if err := db.Ping(); err != nil {
-		log.Fatalln("Could not ping to the database:", err)
+		log.Fatalln("Could not connect to the database:", err)
 	}
 
 	fmt.Println("Connected to the database successfully!")
@@ -41,7 +41,7 @@ func main() {
 		log.Println("Insert user1 error:", err)
 	}
 
-	user2 := User{Name: "Assel", Email: "a_derbisova@nu.edu.kz", Balance: 3500.0}
+	user2 := User{Name: "Assel", Email: "a_derbisova@nu.edu.kz", Balance: 4000.0}
 	err = InsertUser(db, user2)
 	if err != nil {
 		log.Println("Insert user2 error:", err)
