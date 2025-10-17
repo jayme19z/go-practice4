@@ -56,6 +56,9 @@ func main() {
 	} else {
 		fmt.Println("Transfer succeeded!")
 	}
+
+	users, _ = GetAllUsers(db)
+	fmt.Println("Updated users:", users)
 }
 
 func InsertUser(db *sqlx.DB, user User) error {
